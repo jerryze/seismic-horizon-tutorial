@@ -1,0 +1,175 @@
+/* Existing teaching diagrams, comparison layouts and image controls. */
+/* Compare a single trace with adjacent traces in one reading row. */
+.concept-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.concept-card {
+  min-width: 0;
+}
+
+.concept-id,
+.method-index {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.section .concept-card .diagram-title,
+.method-card h4 {
+  margin: 6px 0 12px;
+}
+
+.section .concept-card .diagram-title {
+  color: var(--heading);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.concept-card svg {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  margin: 16px auto;
+}
+
+.concept-card p:not(.diagram-title) {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 24px 0;
+}
+
+.method-card {
+  min-width: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.method-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.method-flow span {
+  font-weight: 500;
+}
+
+.method-flow b {
+  color: var(--text-secondary);
+}
+
+.method-card p {
+  margin: 12px 0 0;
+}
+
+.image-viewer[hidden] {
+  display: none;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px 24px;
+  background: rgba(23, 33, 47, 0.96);
+  cursor: zoom-out;
+}
+
+.image-viewer img {
+  display: block;
+  max-width: min(1400px, 100%);
+  max-height: 76vh;
+  object-fit: contain;
+  background: var(--background);
+  cursor: default;
+}
+
+.image-viewer p {
+  max-width: 1000px;
+  margin: 10px 0 0;
+  overflow-y: auto;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.viewer-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 15;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--background);
+  color: var(--text-secondary);
+  font-size: 20px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  border-color: var(--text-secondary);
+  color: var(--heading);
+}
+
+@media (max-width: 640px) {
+  .concept-row,
+  .method-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .image-viewer {
+    padding-inline: 16px;
+  }
+
+  .back-to-top {
+    right: 12px;
+    bottom: 12px;
+  }
+}

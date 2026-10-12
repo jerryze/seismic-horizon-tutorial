@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="wf-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f4e79"/>
+    </marker>
+    <marker id="wf-arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" fill="#ffffff"/>
+
+  <text x="20" y="32" font-size="15" font-weight="bold" fill="#1f4e79">层位拾取的基本流程</text>
+  <text x="20" y="52" font-size="12" fill="#5b6b7c">选定目标 → 标记起点 → 追踪位置 → 检查修正</text>
+
+  <!-- ============ ① ============ -->
+  <g transform="translate(20,74)">
+    <rect x="0" y="0" width="206" height="126" rx="6" fill="#ffffff" stroke="#1f4e79" stroke-width="1.8"/>
+    <rect x="0" y="0" width="206" height="26" rx="6" fill="#1f4e79"/>
+    <rect x="0" y="18" width="206" height="8" fill="#1f4e79"/>
+    <text x="12" y="18" font-size="16" font-weight="bold" fill="#ffffff">① 确定目标</text>
+    <text x="12" y="50" font-size="14" fill="#3c4a58">明确解释目标</text>
+    <text x="12" y="70" font-size="14" fill="#3c4a58">选定反射事件</text>
+    <text x="12" y="90" font-size="14" fill="#3c4a58">统一拾取相位</text>
+    <text x="12" y="114" font-size="12" fill="#6f7b87">产出：目标与相位</text>
+  </g>
+
+  <!-- ============ ② ============ -->
+  <g transform="translate(252,74)">
+    <rect x="0" y="0" width="206" height="126" rx="6" fill="#ffffff" stroke="#1f4e79" stroke-width="1.8"/>
+    <rect x="0" y="0" width="206" height="26" rx="6" fill="#1f4e79"/>
+    <rect x="0" y="18" width="206" height="8" fill="#1f4e79"/>
+    <text x="12" y="18" font-size="16" font-weight="bold" fill="#ffffff">② 选择起点</text>
+    <text x="12" y="50" font-size="14" fill="#3c4a58">在反射清晰处选点</text>
+    <text x="12" y="70" font-size="14" fill="#3c4a58">记录空间位置与时间</text>
+    <text x="12" y="90" font-size="14" fill="#3c4a58">作为追踪的起点</text>
+    <text x="12" y="114" font-size="12" fill="#6f7b87">产出：种子点</text>
+  </g>
+
+  <!-- ============ ③ ============ -->
+  <g transform="translate(484,74)">
+    <rect x="0" y="0" width="206" height="126" rx="6" fill="#ffffff" stroke="#1f4e79" stroke-width="1.8"/>
+    <rect x="0" y="0" width="206" height="26" rx="6" fill="#1f4e79"/>
+    <rect x="0" y="18" width="206" height="8" fill="#1f4e79"/>
+    <text x="12" y="18" font-size="16" font-weight="bold" fill="#ffffff">③ 沿线追踪</text>
+    <text x="12" y="50" font-size="14" fill="#3c4a58">在相邻道寻找对应位置</text>
+    <text x="12" y="70" font-size="14" fill="#3c4a58">逐步记录目标时间</text>
+    <text x="12" y="90" font-size="14" fill="#3c4a58">形成曲线或表面</text>
+    <text x="12" y="114" font-size="12" fill="#6f7b87">产出：初步拾取结果</text>
+  </g>
+
+  <!-- ============ ④ ============ -->
+  <g transform="translate(716,74)">
+    <rect x="0" y="0" width="226" height="126" rx="6" fill="#ffffff" stroke="#1f4e79" stroke-width="1.8"/>
+    <rect x="0" y="0" width="226" height="26" rx="6" fill="#1f4e79"/>
+    <rect x="0" y="18" width="226" height="8" fill="#1f4e79"/>
+    <text x="12" y="18" font-size="16" font-weight="bold" fill="#ffffff">④ 检查修正</text>
+    <text x="12" y="50" font-size="14" fill="#3c4a58">对照剖面检查</text>
+    <text x="12" y="70" font-size="14" fill="#3c4a58">检查是否跳轴或跳相位</text>
+    <text x="12" y="90" font-size="14" fill="#3c4a58">修正偏离位置</text>
+    <text x="12" y="114" font-size="12" fill="#6f7b87">产出：经检查的层位结果</text>
+  </g>
+
+  <!-- ============ 顺序箭头 ============ -->
+  <g stroke="#1f4e79" stroke-width="2" fill="none" marker-end="url(#wf-arr)">
+    <path d="M230 137 L248 137"/>
+    <path d="M462 137 L480 137"/>
+    <path d="M694 137 L712 137"/>
+  </g>
+
+  <!-- ============ 迭代回路 ============ -->
+  <path d="M828 200 L828 240 L123 240 L123 200"
+        stroke="#c0392b" stroke-width="1.6" fill="none" stroke-dasharray="6 4" marker-end="url(#wf-arr2)"/>
+  <text x="478" y="264" font-size="12" fill="#c0392b" text-anchor="middle">
+    发现偏离时，重新确认目标、调整起点或修正追踪结果
+  </text>
+</svg>
