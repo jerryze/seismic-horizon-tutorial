@@ -254,6 +254,14 @@ img[role="button"]:focus-visible {
   font-weight: 600;
 }
 
+#sec-structure .concept-list dt::before {
+  content: "•";
+  display: inline-block;
+  width: 16px;
+  color: var(--text);
+  font-weight: 400;
+}
+
 .concept-list dd {
   margin: 0;
 }
